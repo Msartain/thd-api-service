@@ -1,23 +1,14 @@
-import logo from './logo.svg';
+import Inventory from './components/inventory/inventory'
+import Car from './components/car/car';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>The Home Depot</h1>
+      <h4>Software Engineer Assignment</h4>
+      <Inventory />
+      <Car />
     </div>
   );
 }
