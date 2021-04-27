@@ -5,10 +5,14 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>The Home Depot</h1>
-      <h4>Software Engineer Assignment</h4>
-      <Inventory />
-      <Car />
+      <div className="header">
+        <h1>The Home Depot</h1>
+        <h4>Software Engineer Assignment</h4>
+      </div>
+      <div className="layout">
+        <Car />
+        <Inventory />
+      </div>
     </div>
   );
 }

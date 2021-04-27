@@ -63,8 +63,8 @@ const Inventory = (props) => {
 
     return (
         <div className="inventory">
+            <button className="styled-button" onClick={handleClick}>{buttonText}</button>
             {display}
-            <button onClick={handleClick}>{buttonText}</button>
         </div>
     )
 }
