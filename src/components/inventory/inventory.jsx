@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './inventory.css';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const Inventory = (props) => {
     const [cars, setCars] = useState([]);
@@ -7,7 +9,7 @@ const Inventory = (props) => {
 
     const handleClick = async () => {
         if (!cars.length) {
-            const response = await fetch('http://localhost:3000/api/cars');
+            const response = await fetch('http://localhost:3000/cars');
             const data = await response.json();
             console.log(data);
             setCars(data);
@@ -16,7 +18,6 @@ const Inventory = (props) => {
             setButtonText('See All Inventory')
             setCars([])
         }
-
     }
 
 
@@ -36,10 +37,11 @@ const Inventory = (props) => {
                     <th>ID</th>
                 </tr> 
             </thead>
-            {cars.map((car, idx) => {
+            <tbody>
+            {cars.map((car) => {
                 return (
-                    <tbody>
-                        <tr key={idx}>
+                    
+                        <tr key={uuidv4()}>
                             <td>{car.make}</td>
                             <td>{car.model}</td>
                             <td>{car.package}</td>
@@ -50,16 +52,17 @@ const Inventory = (props) => {
                             <td>{car.price}</td>
                             <td>{car.id}</td>
                         </tr>
-                    </tbody>
+                    
             )
         })}
+            </tbody>
         </table>
         :
         null;
 
 
     return (
-        <div>
+        <div className="inventory">
             {display}
             <button onClick={handleClick}>{buttonText}</button>
         </div>
