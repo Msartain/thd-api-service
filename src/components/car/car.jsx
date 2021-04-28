@@ -3,7 +3,6 @@ import useInputState from '../../hooks/useInputState';
 import './car.css';
 
 const Car = () => {
-
     const [id, handleIdChange, resetId] = useInputState('');
     const [car, setCar] = useState([]);
     const [buttonText, setButtonText] = useState('Search by License');
@@ -13,7 +12,7 @@ const Car = () => {
             const response = await fetch(`http://localhost:3000/cars/${id}`);
             const data = await response.json();
             setCar(data);
-            setButtonText('Clear')
+            setButtonText('Clear');
         } else {
             setButtonText('Search by License');
             setCar([]);

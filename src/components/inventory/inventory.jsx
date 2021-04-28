@@ -3,7 +3,7 @@ import './inventory.css';
 import { v4 as uuidv4 } from 'uuid';
 
 
-const Inventory = (props) => {
+const Inventory = () => {
     const [cars, setCars] = useState([]);
     const [buttonText, setButtonText] = useState('See All Inventory');
 
@@ -11,12 +11,11 @@ const Inventory = (props) => {
         if (!cars.length) {
             const response = await fetch('http://localhost:3000/cars');
             const data = await response.json();
-            console.log(data);
             setCars(data);
-            setButtonText('Clear')
+            setButtonText('Clear');
         } else {
-            setButtonText('See All Inventory')
-            setCars([])
+            setButtonText('See All Inventory');
+            setCars([]);
         }
     }
 
