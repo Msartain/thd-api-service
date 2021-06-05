@@ -23,3 +23,5 @@ When forking these repositories, run `npm i `to install all dependencies.
 `npm start` - starts the frontend server on localhost:3001
 
 **Docker:**
+
+You need to use docker-machine to allow docker usage.
